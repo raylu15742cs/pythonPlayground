@@ -90,6 +90,15 @@ class LinkedList:
             itr = itr.next
             count += 1
         #Insert data_to_insert after data_after node
+    def remove_by_value(self, data):
+        count = 0
+        itr = self.head
+        while itr:
+            if itr.data == data :
+                self.remove_at(count)
+                break
+            itr = itr.next
+            count += 1
 
 
 if __name__ == '__main__':
@@ -97,5 +106,6 @@ if __name__ == '__main__':
     ll.insert_at_begining(2)
     ll.insert_values(["banana", "mango", "grapes", "orange"])
     ll.insert_after_value("mango", "apple")  # insert apple after mango
+    ll.remove_by_value("orange")  # remove orange from linked list
     ll.insert_at_end(3)
     ll.print()
