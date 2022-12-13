@@ -29,10 +29,13 @@ class LinkedList:
     def insert_at_begining(self,data):
         node = Node(data, self.head)
         self.head = node
+    
 
     
 
 
 if __name__ == '__main__':
     ll = LinkedList()
+    ll.insert_at_begining(2)
+    ll.insert_at_begining(3)
     ll.print()
