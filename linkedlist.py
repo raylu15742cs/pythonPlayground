@@ -73,11 +73,29 @@ class LinkedList:
                 break
             itr = itr.next
             count += 1
+    def insert_values(self,data_list):
+        # commit out line below if you just want to insert
+        self.head = None
+        for data in data_list:
+            self.insert_at_end(data)
+
+    def insert_after_value(self, data_after, data_to_insert):
+        #find first occurrence of data_after
+        count = 0
+        itr = self.head
+        while itr:
+            if itr.data == data_after:
+                self.insert_at(count + 1, data_to_insert)
+                break
+            itr = itr.next
+            count += 1
+        #Insert data_to_insert after data_after node
 
 
 if __name__ == '__main__':
     ll = LinkedList()
     ll.insert_at_begining(2)
+    ll.insert_values(["banana", "mango", "grapes", "orange"])
+    ll.insert_after_value("mango", "apple")  # insert apple after mango
     ll.insert_at_end(3)
-    ll.insert_at(1 , 4)
     ll.print()
