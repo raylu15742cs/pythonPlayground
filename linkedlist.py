@@ -48,6 +48,15 @@ class LinkedList:
             self.insert_at_begining(data)
             return
         
+        count = 0
+        itr = self.head
+        while itr:
+            if count == index - 1:
+                node = Node(data, itr.next)
+                itr.next = node
+                break
+            itr = itr.next
+            count += 1
 
     
 
